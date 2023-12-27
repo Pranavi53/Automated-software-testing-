@@ -1,0 +1,134 @@
+#A sample python code to automate the testing of the sample class having basic functionalities of to perform the mathematical operations on the specified operands of that particular function.  
+  
+# All the required modules which are required across the program are included at the beginning of the code.  
+import unittest  
+import sys  
+  
+A class is written which has different functions to perform the different mathematical operations depending upon the input provided the mathematical operation is performed on the two operands which are taken as input for each function,  the class which is written below is the child class of the test case class from the unit test module,  with the help of this parenting test case class we were able to use various inbuilt functions of the test case class which help us to write various test case function to test the mathematical results which are calculated by the various function written inside this class   
+class BasicMathOperationsTesting(the unit test.TestCase):  
+#Constructor is written which can be used to initialize the various class variable that is required to use throughout this class a variable that is declared inside the constructor of a class can be used across the scope of that particular class   
+    def __init__(self):  
+        pass  
+  
+   
+    def perform_addition(self):  
+        operation_name = "addition"  
+        print("Enter the first number for {} operation".format(operation_name))  
+        num_1 = int(input())  
+        print("Enter the second number for {} operation".format(operation_name))  
+        num_2 = int(input())  
+  
+        resultant = num_1 + num_2  
+        return resultant  
+  
+   
+    def perform_subtraction(self):  
+        operation_name = "subtraction"  
+        print("Enter the first number for {} operation".format(operation_name))  
+        num_1 = int(input())  
+        print("Enter the second number for {} operation".format(operation_name))  
+        num_2 = int(input())  
+  
+        resultant = num_1 - num_2  
+        return resultant  
+ 
+  
+    def perform_multiplication(self):  
+        operation_name = "multiplication"  
+        print("Enter the first number for {} operation".format(operation_name))  
+        num_1 = int(input())  
+        print("Enter the second number for {} operation".format(operation_name))  
+        num_2 = int(input())  
+  
+        resultant = num_1 + num_2  
+        return resultant  
+
+    def perform_division(self):  
+        operation_name = "division"  
+        print("Enter the first number for {} operation".format(operation_name))  
+        num_1 = int(input())  
+        print("Enter the second number for {} operation".format(operation_name))  
+        num_2 = int(input())  
+  
+        resultant = num_1 / num_2  
+        return resultant  
+  
+  
+    def the unit test_for_assert_equals(self,actual_value,expected_value):  
+  
+        actual_value_for_equals = actual_value  
+        expected_value_for_equals = expected_value  
+        self.assertEqual(actual_value_for_equals,expected_value_for_equals)  
+  
+   
+    def the unit test_for_assert_true(self,operand1,operand2):  
+  
+        boolean_resultant = operand1 == operand2  
+        self.assertTrue(boolean_resultant)  
+  
+    def the unit test_for_assert_false(self,operand1,operand2):  
+  
+        boolean_resultant = operand1 != operand2  
+        self.assertFalse(boolean_resultant)  
+  
+   
+def main():  
+      
+    run_the unit test =  BasicMathOperationsTesting()  
+      
+    while(True):  
+          
+        # from the listed below the list of operations select any one of the operations  
+        print("Select any of the mathematical operations which are listed below:")  
+        print("1. To perform the addition operation and then perform the unit test on the result obtained.")  
+        print("2. To perform the subtraction operation and then perform the unit test on the result obtained.")  
+        print("3. To perform the multiplication operation and then perform the unit test on the result obtained.")  
+        print("4. To perform the division operation and then perform the unit test on the result obtained.")  
+        print("5. To exit from the code execution.")  
+          
+        menu_choice = input()  
+        menu_choice = int(menu_choice)  
+   
+        if menu_choice == 1:  
+            result = run_the unit test.perform_addition()  
+        elif menu_choice == 2:  
+            result = run_the unit test.perform_subtraction()  
+        elif menu_choice == 3:  
+            result = run_the unit test.perform_multiplication()  
+        elif menu_choice == 4:  
+            result = run_the unit test.perform_division()  
+        elif menu_choice == 5:  
+            sys.exit()  
+          
+        print("Select any of the unit tests to perform which are listed below:")  
+        print("1. To perform the assertEqual the unit test on the above done mathematical operation.")  
+        print("2. To perform the assertTrue the unit test on the above done mathematical operation.")  
+        print("3. To perform the assertFalse the unit test on the above done mathematical operation.")  
+              
+        menu_choice_for_unitttest = input()  
+        menu_choice_for_unitttest = int(menu_choice_for_unitttest)  
+  
+        if menu_choice_for_unitttest == 1:  
+            print("Expected value for test to pass:")  
+            expected_value = int(input())  
+            run_the unit test.the unit test_for_assert_equals(result,expected_value)  
+        elif menu_choice_for_unitttest == 2:  
+            print("Expected value for test to pass:")  
+            expected_value = int(input())  
+            run_the unit test.the unit test_for_assert_true(result,expected_value)  
+        elif menu_choice_for_unitttest == 3:  
+            print("Expected value for test to pass:")  
+            expected_value = int(input())  
+            run_the unit test.the unit test_for_assert_false(result,expected_value)  
+  
+  
+        print("To go on with the code getting executed, enter input [y] or [n]")  
+        continue_or_exit = input()  
+   
+        if continue_or_exit == 'y' or continue_or_exit == 'Y':  
+            pass  
+        elif continue_or_exit == 'n' or continue_or_exit == 'N':  
+            sys.exit()  
+   
+if __name__ == '__main__':  
+    main()  
